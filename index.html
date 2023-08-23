@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/img/logotransp.png" type="img/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.4/build/global/luxon.min.js"></script>
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Arte Alfonso</title>
+<style>
+    body {
+        background-image: url(./assets/img/logoyfondo.png);
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+    <header class="row">
+        <div class="col-mb-8 col-12">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid m-l20">
+            <a class="navbar-brand" href="#">
+            <img class="traslate" src="./assets/img/logotransp.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Ordenar por</a>
+                
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+                    <li class="p-texto" onclick="ordenarDeAaZ()">  A - Z</li>
+                
+                    <li  class="p-texto"   onclick="ordenarDePrecioMasAlto()">Precio mas alto</li>
+    
+                    <li  class="p-texto"  onclick="ordenarDePrecioMasBajo()">Precio mas bajo</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle text-white" href="#"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
+                
+                    <ul class="dropdown-menu 2" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Todos</a></li>
+                        <li><a class="dropdown-item" href="#">Relojes</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">Deco con discos</a></li>
+                    
+                        <li><a class="dropdown-item" href="#">Cuadros tridimencionales</a></li>
+    
+                        <li><a class="dropdown-item" href="#">Deco Boho</a></li>
+                    </ul>
+                    </li>
+                    
+            
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="buscar" aria-label="buscar" aria-describedby="input-group-right">
+                    <span class="input-group-text" id="input-group-right-example">Buscar</span>
+                </div>
+            </div>
+        </nav>
+</header>
+    <hr>
+    <main>
+        <div class="row">
+            <div class="col-mb-4 col-12">
+            
+            <p class="parrafo text-white fs-5 text-center my-4">Somos una empresa familiar, que se dedica a plasmar en objetos el arte de crear, utilizando un amplio abanico de materiales, todas las obras con elementos reciclables!!</p>
+            </div>
+        <h2 class="titulo1 text-white text-center my-3">Nuestras Artesanías</h2>
+        
+        <section>
+            <h3 style="color:rgb(241, 92, 33)">Registrate para poder acceder a descuentos y novedades</h3>
+                <form id="formulario">
+                    /<!--FORMULARIO-->
+
+                <label for="nombre" style="color: white;">
+                    Nombre
+                    <input type="text" name="nombre" id="nombre" placeholder="Enzo" />
+                </label>
+                <label for="email"style="color: white;">
+                    Email:
+                    <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Enzo@gmail.com"
+                    />
+                    <small id="mensaje"></small>
+                </label>
+                <input type="submit" value="enviar" class="btn btn-success" />
+                <input type="button" value="borrar" class="btn btn-danger" onclick="borrarCampos()">
+                </form>
+            </section>
+            <hr>            
+            
+                <main>
+        <section id="misArtesanias" class="row">
+    <!-- Productos y servicios -->
+        </section>
+        <section>
+            <hr>
+        <h4 style="color:rgb(248, 132, 37)">Tu compra:</h4>
+        <p id="cantidad"><!--cantidad--></p>
+        <table class="table table-striped" style="color: rgb(105, 72, 72);color:rgb(34, 3, 3);">
+            <thead>
+            <tr style="color:rgb(204, 54, 74)">
+                <th>id</th>
+                <th>producto</th>
+                <th>precio</th>
+            </tr>
+            </thead>
+            <tbody id="tablabody">
+            <!-- El carrito de compras -->
+            </tbody>
+        </table>
+        </section>
+        <p class="monto text-white" id="total">
+            total: 0
+        </p>
+        <button id="finalizar" class="btn btn-success">Finalizar compra</button>
+        <hr>  
+            
+        <section id="Arte">
+            <!-- Atesanias aqui -->
+        </section>
+    </div>
+
+    <div class="row">
+    <div class="col-mb-4 col-12">
+        <p class="parrafofinal fs-5 text-white text-center my-5">Si querés decorar tu hogar, o regalar un presente original
+        y 100% artesanal, estás en el lugar correcto, porque ArteAlfonso te lo concede.No 
+        dudes en hacer tu consulta por productos personalizados en la sección de contactos!</p>
+    </div>
+</div>
+</main>
+<div class="container">
+<footer class="row">
+    <div class="col-mb-4 col-12 text-white text-center">
+        <img src="./assets/img/logotransp.png" alt="logo">
+    </div>
+<div class="col-mb-4 col-12 text-white text-center">
+  <p>Pedidos y consultas aquí</p>
+</div>
+    <div class="col-mb-4 col-12 text-white text-center">
+        <p>redes sociales</p>
+        <div class="col-mb-4 col-12 text-white text-center">
+            <p>encontranos en nuestras ferias!</p>
+        </div>
+    </div>
+</div>
+<div class="iconos-redes">
+      
+  <a href="https://www.pinterest.com/" target="_blank">
+    <span class="iconify" data-icon="logos:pinterest"></span>
+
+  <a href="https://www.instagram.com/arte.alfonso/" target="_blank">
+    <span class="iconify" data-icon="skill-icons:instagram"></span> </a>
+  
+  <a href="https://www.youtube.com/@canal4ezeiza" target="_blank">
+    <span class="iconify" data-icon="logos:youtube"></span> </a>
+  
+    
+  <a href="https://www.linkedin.com" target="_blank">
+    <span class="iconify" data-icon="logos:linkedin"></span>
+  </a>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</div>
+<p class="creditos">Sitio Web creado por Arte Alfonso</p>
+
+</footer>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.4/build/global/luxon.min.js"></script>
+
+    <script src="./lista.js"></script>
+    <script src="./logica.js"></script>
+
+</body>
+</html>

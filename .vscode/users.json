@@ -1,0 +1,38 @@
+{
+    "Arte": [{
+            "nombre": "tapizado en macramé",
+            "id": 1,
+            "categoria": "Decoración",
+            "precio": 20000,
+            "stock": "hay stock"
+        },
+        {
+            "nombre": "Relojes de pared con vinilos calados",
+            "id": 2,
+            "categoria": "Decoración",
+            "precio": 2500,
+            "stock": "hay stock"
+        },        
+        {
+            "nombre": "Relojes de pared con vinilos calados",
+            "id": 3,
+            "categoria": "Decoración",
+            "precio": 2500,
+            "stock": "hay stock"
+        },
+        {
+            "nombre": "Cuadro decorativo tridimensional",
+            "id": 4,
+            "categoria": "Decoración",
+            "precio": 5000,
+            "stock": "hay stock"
+        },
+        {
+            "nombre": "Cuadro decorativo mundo",
+            "id": 5,
+            "categoria": "Decoración",
+            "precio": 5000,
+            "stock": "hay stock"
+        }
+    ]
+}
