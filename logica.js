@@ -260,7 +260,7 @@ const fin=DateTime.now();
 //get a json local
 
 function JsonLocal() {
-    const URLJSON = '/.vscode/users.json';
+    const URLJSON = 'https://raw.githubusercontent.com/JesiAlf/PFJSJesicaAlfonso/main/.vscode/users.json';
 
     fetch(URLJSON)
     .then(respuesta => respuesta.json()) 
