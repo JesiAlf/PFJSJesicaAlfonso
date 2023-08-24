@@ -32,7 +32,7 @@
             "id": 5,
             "categoria": "Decoración",
             "precio": 5000,
-            "stock": "hay stock"
+            "stock": "sin stock, por pedido"
         }
     ]
 }
